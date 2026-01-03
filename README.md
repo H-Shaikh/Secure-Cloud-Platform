@@ -1,6 +1,6 @@
 # Secure Cloud-Native Platform (Learning Simulation)
 
-**Status:** Phase 1 — Core Infrastructure (Week 1)  
+**Status:** Phase 1 - Core Infrastructure (Week 1)  
 **Scope:** Learning simulation built alongside KodeKloud DevOps Engineer path  
 **Honesty Policy:** This is pre-production practice, not a prod system. See [`decisions.md`](decisions.md) for intentional omissions.
 
@@ -8,23 +8,26 @@
 
 ## What This Repo Is
 
-A **single, focused system** demonstrating incremental DevOps learning from Linux fundamentals to Kubernetes basics. Built to be **completed *before* CKA prep** — no scope creep, no resume-driven fluff.
-
-**Key principle:** Every file proves a decision, not just tool usage.
+I am building a secure, minimal cloud platform that deploys and operates a simple api workloads, with strong emphasis on infrastructure, security, automation, and failure handling.
 
 ---
 
 ## Repo Map
 
-| File | What Recruiters Skim For |
+| File | What it shows |
 | ------ | -------------------------- |
 | [`architecture.md`](architecture.md) | How you think about constraints |
-| [`decisions.md`](decisions.md) | Trade-off reasoning (senior signal) |
-| [`failures.md`](failures.md) | Real debugging experience |
+| [`decisions.md`](decisions.md) | Trade-off reasoning |
+| [`failures.md`](failures.md) | debugging experience |
 | [`security.md`](security.md) | Hygiene & blast-radius awareness |
 | [`lessons-learned.md`](lessons-learned.md) | Growth trajectory |
 
 ---
+
+
+📐 Architecture Overview  
+See [architecture-overview.md](./architecture-overview.md)
+
 
 ## Phase 1 Progress (Week 1)
 
@@ -43,7 +46,7 @@ A **single, focused system** demonstrating incremental DevOps learning from Linu
 ## How to Read This Project
 
 **If you're a recruiter/hiring manager:**  
-Start with [`decisions.md`](decisions.md) → [`failures.md`](failures.md). This shows engineering judgment, not tutorial copying.
+Start with [`decisions.md`](decisions.md) → [`failures.md`](failures.md).
 
 **If you're a peer learner:**  
 Follow the commit history. Each phase maps to KodeKloud modules. Clone, break, fix.
@@ -55,7 +58,7 @@ Follow the commit history. Each phase maps to KodeKloud modules. Clone, break, f
 | Constraint | Reason |
 | ---------- | ------ |
 | **Single AWS region** | Learning depth > multi-cloud breadth |
-| **Public subnets only (Phase 1)** | Cost control; private subnets added in Phase 3 |
+| **Public subnets only (Phase 1)** | Cost control, private subnets added in Phase 3 |
 | **No autoscaling** | Focus on manual troubleshooting first |
 | **No CI/CD until Phase 4** | Understand manual steps before automation |
 
@@ -75,7 +78,7 @@ See [`decisions.md`](decisions.md) for full trade-off log.
 
 ### Update cadence
 
-Update this section weekly with evidence.
+i will Update this section weekly.
 
 ![Week 1 VPC Created](./assets/week1-evidence.png)
 
