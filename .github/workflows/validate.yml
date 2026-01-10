@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate Terraform formatting
+      - name: Setup Terraform
         if: hashFiles('terraform/**/*.tf') != ''
         uses: hashicorp/setup-terraform@v3
         with:
@@ -30,9 +30,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y shellcheck
-          shellcheck automation/scripts/**/*.sh
+          find automation/scripts -type f -name '*.sh' -print0 | xargs -0 shellcheck
 
       - name: Markdown lint
         run: |
           npm install -g markdownlint-cli
-          markdownlint "**/*.md"
+          find . \
+            \( -path './.git' -o -path './node_modules' -o -path './.terraform' -o -path './.venv' -o -path './venv' -o -path './dist' -o -path './build' \) -prune -o \
+            -type f -name '*.md' -print0 | xargs -0 markdownlint
