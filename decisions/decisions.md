@@ -172,4 +172,9 @@ Security is enforced via **guardrails**, not personal discipline.
 - Revisions are allowed and encouraged
 - Superseded decisions are updated, not erased
 
+## CI Design
+
+CI is intentionally limited to static validation (formatting, linting, structure)
+to avoid hidden side effects and credential exposure.
+
 This document represents **current intent**, not final state.

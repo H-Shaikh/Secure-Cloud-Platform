@@ -1,12 +1,38 @@
-name: validate (placeholder)
+name: Validate Repository
 
 on:
-  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
 
 jobs:
-  placeholder:
+  validate:
+    name: Basic Validation Checks
     runs-on: ubuntu-latest
+
     steps:
-      - name: Placeholder
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Terraform formatting
+        if: hashFiles('terraform/**/*.tf') != ''
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.0
+
+      - name: Terraform fmt check
+        if: hashFiles('terraform/**/*.tf') != ''
+        run: terraform fmt -check -recursive
+
+      - name: Shell script lint
+        if: hashFiles('automation/scripts/**/*.sh') != ''
         run: |
-          echo "CI validate workflow is WIP. This placeholder prevents an empty workflow file warning."
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+          shellcheck automation/scripts/**/*.sh
+
+      - name: Markdown lint
+        run: |
+          npm install -g markdownlint-cli
+          markdownlint "**/*.md"
