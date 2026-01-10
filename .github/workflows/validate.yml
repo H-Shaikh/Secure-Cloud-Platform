@@ -1,0 +1,12 @@
+name: validate (placeholder)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Placeholder
+        run: |
+          echo "CI validate workflow is WIP. This placeholder prevents an empty workflow file warning."

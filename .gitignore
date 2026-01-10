@@ -1,5 +1,7 @@
 # Secure Cloud Platform .gitignore
 
+/PortfolioPlan.md
+
 # --- Secrets & Credentials ---
 .env
 .env.*

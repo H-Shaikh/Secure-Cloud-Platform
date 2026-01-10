@@ -1,94 +1,65 @@
-# Secure Cloud-Native Platform (Learning Simulation)
+# Secure Cloud Platform
 
-**Status:** Phase 1 - Core Infrastructure (Week 1)  
-**Scope:** Learning simulation built alongside KodeKloud DevOps Engineer path  
-**Honesty Policy:** This is pre-production practice, not a prod system. See [`decisions.md`](decisions.md) for intentional omissions.
+A security-first cloud infrastructure project designed to demonstrate **production-grade DevOps and DevSecOps thinking**, with emphasis on **guardrails, failure awareness, and clear decision-making**.
 
----
-
-## What This Repo Is
-
-I am building a secure, minimal cloud platform that deploys and operates a simple api workloads, with strong emphasis on infrastructure, security, automation, and failure handling.
+This repository is intentionally structured as **engineering evidence**, not a tutorial or lab dump.
 
 ---
 
-## Repo Map
+## 🎯 Purpose
 
-| File | What it shows |
-| ------ | -------------------------- |
-| [`architecture.md`](architecture.md) | How you think about constraints |
-| [`decisions.md`](decisions.md) | Trade-off reasoning |
-| [`failures.md`](failures.md) | debugging experience |
-| [`security.md`](security.md) | Hygiene & blast-radius awareness |
-| [`lessons-learned.md`](lessons-learned.md) | Growth trajectory |
+The purpose of this project is to demonstrate how cloud infrastructure should be:
 
----
+- Designed with **security by default**
+- Built with **explicit architectural trade-offs**
+- Protected against **credential leaks and common failure scenarios**
+- Maintained using **professional repository and automation practices**
 
-
-📐 Architecture Overview  
-See [architecture-overview.md](./architecture-overview.md)
-
-
-## Phase 1 Progress (Week 1)
-
-**Goal:** Stand up basic AWS VPC & understand why.
-
-- ✅ VPC with 2 public subnets (2 AZs)
-- ✅ Internet Gateway for outbound
-- ✅ Documented: Why no NAT Gateway (cost, scope)
-
-**Current infra:** `terraform/vpc/` (see `architecture.md` for diagram)
-
-**Next (Week 2):** IAM role for EC2 + first instance launch
+The focus is on **how decisions are made**, not just which tools are used.
 
 ---
 
-## How to Read This Project
+## 🧠 Core Engineering Principles
 
-**If you're a recruiter/hiring manager:**  
-Start with [`decisions.md`](decisions.md) → [`failures.md`](failures.md).
+- Guardrails over discipline
+- Documentation over screenshots
+- Signal over noise
+- Minimalism over over-engineering
+- Failure as a design input
 
-**If you're a peer learner:**  
-Follow the commit history. Each phase maps to KodeKloud modules. Clone, break, fix.
-
----
-
-## Constraints & Scope (Important)
-
-| Constraint | Reason |
-| ---------- | ------ |
-| **Single AWS region** | Learning depth > multi-cloud breadth |
-| **Public subnets only (Phase 1)** | Cost control, private subnets added in Phase 3 |
-| **No autoscaling** | Focus on manual troubleshooting first |
-| **No CI/CD until Phase 4** | Understand manual steps before automation |
-
-See [`decisions.md`](decisions.md) for full trade-off log.
+Every directory and file in this repository exists intentionally.
 
 ---
 
-## Tool Versions (Reproducibility)
+## 🏗️ High-Level Architecture
 
-- Terraform: `~&gt; 1.6`
-- AWS Provider: `~&gt; 5.0`
-- Instance type: `t3.micro` (Free Tier)
+This project models a secure cloud platform that includes:
 
----
+- Isolated networking with clear scope boundaries
+- Least-privilege IAM design
+- Compute resources with hardened access
+- Kubernetes manifests separated by responsibility
+- Lightweight automation and validation
+- Explicit security and failure documentation
 
-## Week 1 Evidence
+📐 Architecture details:
 
-### Update cadence
-
-i will Update this section weekly.
-
-![Week 1 VPC Created](./assets/week1-evidence.png)
-
----
-
-## License
-
-MIT — Free to learn from, not to copy-paste as your own.
+- [`architecture-overview.md`](./architecture-overview.md)
 
 ---
 
-- **Last Updated:** 28/12/2025 (Week 1)
-- **Next Review Date:** End of Phase 1 (Week 4)
+## 📂 Repository Structure
+
+```text
+secure-cloud-platform/
+├── .github/workflows/        # CI validation workflows
+├── automation/scripts/       # Operational automation scripts
+├── kubernetes/               # Base configs, workloads, troubleshooting
+├── terraform/                # Infrastructure as Code (VPC, IAM, Compute)
+├── decisions/                # Architecture & security decision records
+├── security/                 # Credential handling & guardrails
+├── architecture-overview.md
+├── failures.md
+├── lessons-learned.md
+├── README.md
+└── .gitignore
