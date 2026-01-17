@@ -2,8 +2,6 @@
 
 A security-first cloud infrastructure project designed to demonstrate **production-grade DevOps and DevSecOps thinking**, with emphasis on **guardrails, failure awareness, and clear decision-making**.
 
-This repository is intentionally structured as **engineering evidence**, not a tutorial or lab dump.
-
 ---
 
 ## 🎯 Purpose
@@ -15,7 +13,7 @@ The purpose of this project is to demonstrate how cloud infrastructure should be
 - Protected against **credential leaks and common failure scenarios**
 - Maintained using **professional repository and automation practices**
 
-The focus is on **how decisions are made**, not just which tools are used.
+The main focus is on **how decisions are made**, not just which tools are used.
 
 ---
 
@@ -26,9 +24,6 @@ The focus is on **how decisions are made**, not just which tools are used.
 - Signal over noise
 - Minimalism over over-engineering
 - Failure as a design input
-
-Every directory and file in this repository exists intentionally.
-
 ---
 
 ## 🏗️ High-Level Architecture
